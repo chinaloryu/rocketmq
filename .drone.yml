@@ -8,7 +8,7 @@ steps:
       - "mvn -Prelease-all -DskipTests clean install -U"
     depends_on: [ "clone" ]
   - name: "publish"
-    image: plugins/docker
+    image: alpine
     repo: chinaloryu/rocketmq
     commands:
       - echo ${username},${password}
