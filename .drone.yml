@@ -4,7 +4,6 @@ name: "publish"
 steps:
   - name: "publish"
     image: plugins/docker
-    registry: 'http://hz.4yutech.com:7070/rocketmq'
     secrets: [ "docker_username","docker_password" ]
     settings:
       repo: chinaloryu/rocketmq
