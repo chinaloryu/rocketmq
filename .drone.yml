@@ -11,9 +11,6 @@ steps:
     image: plugins/docker
     repo: chinaloryu/rocketmq
     registry: http://hz.4yutech.com:7070/rocketmq
-    tags: 
-      - hz.4yutech.com:7070/rocketmq/test:latest
-      - hz.4yutech.com:7070/rocketmq/test:$DRONE_BUILD_NUMBER
     environment:
       username:
         from_secret: docker_username
