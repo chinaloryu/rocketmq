@@ -4,14 +4,10 @@ name: "publish"
 steps:
   - name: "publish"
     image: plugins/docker
+    secrets: [ docker_username, docker_password ]
     settings:
-      USERNAME:
-        from-secret: docker_username
-      PASSWORD:
-        from-secret: docker_password
-      repo: chinaloryu/rocketmq
       tags:
-        - "${DRONE_BUILD_NUMBER}"
+        - "chinaloryu/rocketmq:${DRONE_BUILD_NUMBER}"
         - latest
         - '0.1'
       # dockerfile: "Dockerfile"
