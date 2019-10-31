@@ -12,7 +12,6 @@ steps:
     repo: chinaloryu/rocketmq
     registry: http://hz.4yutech.com:7070/rocketmq
     tags: "${DRONE_BUILD_NUMBER}"
-    dockerfile: Dockerfile
     environment:
       username:
         from_secret: docker_username
