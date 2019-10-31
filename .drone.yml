@@ -8,7 +8,7 @@ steps:
       - "mvn -Prelease-all -DskipTests clean install -U"
     depends_on: [ "clone" ]
   - name: "publish"
-    image: alpine
+    image: plugins/docker
     repo: chinaloryu/rocketmq
     registry: http://hz.4yutech.com:7070/rocketmq
     tags: "${DRONE_BUILD_NUMBER}"
