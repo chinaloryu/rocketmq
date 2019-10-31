@@ -6,8 +6,9 @@ steps:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
     settings:
+      repo: chinaloryu/rocketmq
       tags:
-        - "chinaloryu/rocketmq:${DRONE_BUILD_NUMBER}"
+        - "${DRONE_BUILD_NUMBER}"
         - latest
         - '0.1'
       # dockerfile: "Dockerfile"
