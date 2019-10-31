@@ -4,8 +4,8 @@ name: "publish"
 steps:
   - name: "publish"
     image: plugins/docker
-    repo: chinaloryu/rocketmq
     settings:
+      repo: chinaloryu/rocketmq
       tags:
         - "${DRONE_BUILD_NUMBER}"
         - latest
@@ -15,7 +15,7 @@ steps:
       password:
         from_secret: docker_password
       # dockerfile: "Dockerfile"
-      # registry: 'http://hz.4yutech.com:7070/rocketmq'
+      registry: hz.4yutech.com:7070/rocketmq
     depends_on: [ "clone" ]
 
 trigger:
