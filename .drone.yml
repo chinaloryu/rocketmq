@@ -13,7 +13,7 @@ steps:
       # dockerfile: "Dockerfile"
       registry: 'http://hz.4yutech.com:7070/rocketmq'
       tags: 
-        - "${DRONE_BUILD_NUMBER}"
+        # - "${DRONE_BUILD_NUMBER}"
         - latest
         - '0.1'
     depends_on: [ "clone" ]
