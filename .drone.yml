@@ -2,11 +2,18 @@
 kind: "pipeline"
 name: "default"
 steps:
+  - name: "build"
+    image: maven:3-jdk-8
+    commands:
+      - "mvn -Prelease-all -DskipTests clean install -U"
+    depends_on: [ "clone" ]
   - name: "publish"
     image: alpine
     repo: chinaloryu/rocketmq
+    registry: http://hz.4yutech.com:7070/rocketmq
+    tags: "${DRONE_BUILD_NUMBER}"
     commands:
-      - echo $username, $password
+      - echo $username,$password
     environment:
       username:
         from_secret: docker_username
@@ -14,7 +21,7 @@ steps:
         from_secret: docker_password
       # dockerfile: "Dockerfile"
       # tags: "${DRONE_BUILD_NUMBER}"
-    depends_on: [ "clone" ]
+    depends_on: [ "build" ]
 
 trigger:
   branch:
