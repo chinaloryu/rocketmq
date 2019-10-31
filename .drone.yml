@@ -5,14 +5,18 @@ steps:
   - name: "publish"
     image: plugins/docker
     repo: chinaloryu/rocketmq
-    registry: http://hz.4yutech.com:7070/rocketmq
-    environment:
+    settings:
+      registry: 'http://hz.4yutech.com:7070/rocketmq'
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
       # dockerfile: "Dockerfile"
-      # tags: "${DRONE_BUILD_NUMBER}"
+      tags: 
+        - "${DRONE_BUILD_NUMBER}"
+        - latest
+        - '0.1'
+    depends_on: [ "clone" ]
 
 trigger:
   branch:
