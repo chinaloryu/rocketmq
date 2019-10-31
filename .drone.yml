@@ -9,7 +9,7 @@ steps:
     settings:
       repo: chinaloryu/rocketmq
       tags:
-        - "hz.4yutech.com:7070/rocketmq:${DRONE_BUILD_NUMBER}"
+        - "${DRONE_BUILD_NUMBER}"
         - latest
         - '0.1'
       # dockerfile: "Dockerfile"
