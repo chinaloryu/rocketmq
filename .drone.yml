@@ -4,6 +4,7 @@ name: "publish"
 steps:
   - name: "publish"
     image: plugins/docker
+    registry: hz.4yutech.com:7070/rocketmq
     secrets: [ "docker_username","docker_password" ]
     settings:
       repo: chinaloryu/rocketmq
@@ -12,7 +13,6 @@ steps:
         - latest
         - '0.1'
       # dockerfile: "Dockerfile"
-      registry: hz.4yutech.com:7070/rocketmq
     depends_on: [ "clone" ]
 
 trigger:
