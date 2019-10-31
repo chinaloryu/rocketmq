@@ -6,16 +6,16 @@ steps:
     image: plugins/docker
     repo: chinaloryu/rocketmq
     settings:
+      tags:
+        - "${DRONE_BUILD_NUMBER}"
+        - latest
+        - '0.1'
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
       # dockerfile: "Dockerfile"
       registry: 'http://hz.4yutech.com:7070/rocketmq'
-      tags:
-        - "${DRONE_BUILD_NUMBER}"
-        - latest
-        - '0.1'
     depends_on: [ "clone" ]
 
 trigger:
