@@ -5,7 +5,10 @@ steps:
   - name: "publish"
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
-    tags: [ "${DRONE_BUILD_NUMBER}", latest, v0.1 ]
+    tags: 
+      - "${DRONE_BUILD_NUMBER}"
+      - latest
+      - 'v0.1'
     repo: chinaloryu/rocketmq
     DOCKER_LAUNCH_DEBUG: true
     depends_on: [ "clone" ]
