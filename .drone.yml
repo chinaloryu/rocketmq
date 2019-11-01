@@ -9,7 +9,7 @@ steps:
       DOCKER_LAUNCH_DEBUG: 'true'
       insecure: true
       registry: http://hz.4yutech.com:7070
-      repo: hz.4yutech.com:7070/chinaloryu/rocketmq
+      repo: hz.4yutech.com:7070/chinaloryu/rocketmq/rocketmq
       tags:
         - "${DRONE_BUILD_NUMBER}"
         - latest
