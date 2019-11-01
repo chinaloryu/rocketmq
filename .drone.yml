@@ -1,6 +1,14 @@
-pipeline:
-  docker:
+---
+kind: "pipeline"
+name: "publish"
+steps:
+  - name: "publish"
     image: plugins/docker
     repo: chinaloryu/rocketmq
-    tags: latest
+    tags: ${DRONE_BUILD_NUMBER}
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    DOCKER_LAUNCH_DEBUG: true
+    depends_on: [ "clone" ]
+    when:
+      branch: release
+      event: push
