@@ -14,3 +14,11 @@ pipeline:
     tags: latest
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
     depends: [ "build" ]
+  dingtalk:
+    name: dingtalk
+    image: lddsb/drone-dingtalk-message
+    token: 
+      from_secret: [ DINGTALK_TOKEN ]
+    type: markdown
+    message_color: true
+    sha_link: true
