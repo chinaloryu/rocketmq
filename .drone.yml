@@ -6,6 +6,7 @@ steps:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
     settings:
+      registry: http://hz.4yutech.com:7070
       repo: chinaloryu/rocketmq
       tags:
         - "${DRONE_BUILD_NUMBER}"
