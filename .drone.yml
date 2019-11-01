@@ -3,15 +3,13 @@ pipeline:
     name: build
     image: maven:3-jdk-8
     commands:
-      - "mvn clean package"
+      - "mvn -Prelease -DskipTests clean install"
     depends_on: [ "clone" ]
   docker:
     name: docker
     image: plugins/docker
     DOCKER_LAUNCH_DEBUG: true
-    registry: hz.4yutech.com:7070/chinaloryu
-    insecrue: true
-    repo: rocketmq
+    repo: chinaloryu/rocketmq
     tags: latest
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
     depends: [ "build" ]
