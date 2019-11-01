@@ -5,19 +5,15 @@ steps:
   - name: "publish"
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
-    settings:
-      DOCKER_LAUNCH_DEBUG: true
-      insecure: true
-      registry: 192.168.2.100:7070/chinaloryu
-      repo: 192.168.2.100:7070/rocketmq/rocketmq
-      tags:
-        - "${DRONE_BUILD_NUMBER}"
-        - latest
-        - '0.1'
-      # dockerfile: "Dockerfile"
+    tags: [ "${DRONE_BUILD_NUMBER}", latest, v0.1 ]
+    repo: chinaloryu/rocketmq
+    DOCKER_LAUNCH_DEBUG: true
     depends_on: [ "clone" ]
+    when:
+      branch: release
+      event: push
 
-trigger:
-  branch:
-  - release
+
+
+
 
