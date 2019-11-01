@@ -1,14 +1,14 @@
----
-kind: "pipeline"
-name: "publish"
-steps:
-  - name: "publish"
+pipeline:
+  build:
+    name: build
+    image: maven:3-jdk-8
+    commands:
+      - "mvn clean package"
+    depends_on: [ "clone" ]
+  docker:
+    name: docker
     image: plugins/docker
     repo: chinaloryu/rocketmq
-    tags: ${DRONE_BUILD_NUMBER}
+    tags: latest
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
-    DOCKER_LAUNCH_DEBUG: true
-    depends_on: [ "clone" ]
-    when:
-      branch: release
-      event: push
+    depends: [ "build" ]
