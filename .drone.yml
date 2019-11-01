@@ -8,7 +8,9 @@ pipeline:
   docker:
     name: docker
     image: plugins/docker
-    repo: chinaloryu/rocketmq
+    registry: hz.4yutech.com:7070/chinaloryu
+    insecrue: true
+    repo: rocketmq
     tags: latest
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
     depends: [ "build" ]
