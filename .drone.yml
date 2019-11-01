@@ -8,6 +8,7 @@ pipeline:
   docker:
     name: docker
     image: plugins/docker
+    DOCKER_LAUNCH_DEBUG: true
     registry: hz.4yutech.com:7070/chinaloryu
     insecrue: true
     repo: rocketmq
