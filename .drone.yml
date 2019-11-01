@@ -6,10 +6,10 @@ steps:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
     settings:
-      DOCKER_LAUNCH_DEBUG: 'true'
+      DOCKER_LAUNCH_DEBUG: true
       insecure: true
-      registry: http://hz.4yutech.com:7070
-      repo: hz.4yutech.com:7070/rocketmq/rocketmq
+      # registry: http://hz.4yutech.com:7070
+      repo: chinaloryu/rocketmq
       tags:
         - "${DRONE_BUILD_NUMBER}"
         - latest
