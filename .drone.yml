@@ -4,7 +4,7 @@ pipeline:
     image: guoxudongdocker/drone-dingtalk 
     settings:
       token: 
-        from_secret: dingding
+        from_secret: DINGTALK_TOKEN
       type: markdown
       message_color: true
       message_pic: true
