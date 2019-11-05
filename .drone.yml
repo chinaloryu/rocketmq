@@ -3,7 +3,5 @@ name: dingtalk
 steps:
 - name: dingtalk
   image: lddsb/drone-dingtalk-message
-  token: "https://oapi.dingtalk.com/robot/send?access_token=2da005f562fa1552bea0e0981b0114bd3ca6370485fa047f1b2ae667f98ab1af"
-  commands:
-    - "echo $token"
+  secrets: [ dingding ]
   type: markdown
