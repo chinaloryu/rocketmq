@@ -1,7 +1,7 @@
 pipeline:
   dingtalk:
     name: dingtalk
-    image: guoxudongdocker/drone-dingtalk 
+    image: lddsb/drone-dingtalk-message
     settings:
       token: 
         from_secret: DINGTALK_TOKEN
