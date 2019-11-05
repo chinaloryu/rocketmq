@@ -16,9 +16,10 @@ pipeline:
   dingtalk:
     name: dingtalk
     image: lddsb/drone-dingtalk-message
+    secrets: [ dingding ]
     settings:
       token:
-        from_secret: DINGTALK_TOKEN
+        from_secret: dingding
       type: markdown
       message_color: true
       sha_link: true
