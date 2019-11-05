@@ -1,7 +1,9 @@
-steps:
-- name: dingtalk
-  image: lddsb/drone-dingtalk-message
-  settings:
-    token: 
-      from_secret: dingtalk_token
-    type: markdown
+kind: pipeline
+name: dingtalk
+  steps:
+  - name: dingtalk
+    image: lddsb/drone-dingtalk-message
+    settings:
+      token: 
+        from_secret: dingtalk_token
+      type: markdown
