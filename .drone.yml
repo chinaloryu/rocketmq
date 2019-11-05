@@ -1,13 +1,12 @@
 pipeline:
-  dingtalk:
-    name: dingtalk
-    image: lddsb/drone-dingtalk-message
-    settings:
-      token: 
-        from_secret: DINGTALK_TOKEN
-      type: markdown
-      message_color: true
-      message_pic: true
-      sha_link: true
-  when:
-    status: [failure, success]
+  name: dingtalk
+  image: lddsb/drone-dingtalk-message
+  settings:
+    token: 
+      from_secret: DINGTALK_TOKEN
+    type: markdown
+    message_color: true
+    message_pic: true
+    sha_link: true
+when:
+  status: [failure, success]
