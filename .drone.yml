@@ -1,6 +1,6 @@
 pipeline:
   dingtalk:
-    image: lddsb/drone-dingtalk-message
+    image: chinaloryu/dingtalk
     debug: true
     token: 
       from_secret: dingding
