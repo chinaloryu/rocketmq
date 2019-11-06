@@ -1,7 +1,24 @@
 pipeline:
+  build:
+    name: build
+    image: maven:3-jdk-8
+    commands:
+      - "mvn -Prelease -DskipTests clean install"
+    depends_on: [ "clone" ]
+  docker:
+    name: docker
+    image: plugins/docker
+    DOCKER_LAUNCH_DEBUG: true
+    repo: chinaloryu/rocketmq
+    tags: latest
+    secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    depends: [ "build" ]
   dingtalk:
-    image: lddsb/drone-dingtalk-message
-    debug: true
-    token: 
+    name: dingtalk
+    image: chinaloryu/dingtalk
+    token:
       from_secret: dingding
+    debug: true
     type: markdown
+    message_color: true
+    sha_link: true
