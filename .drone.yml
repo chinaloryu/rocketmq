@@ -10,7 +10,7 @@ pipeline:
     image: plugins/docker
     DOCKER_LAUNCH_DEBUG: true
     repo: rocketmq/rocketmq
-    registry: hz.4yutech.com:7070
+    registry: 192.168.2.100:7070/chinaloryu
     insecure: true
     tags: latest
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
