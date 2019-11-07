@@ -22,3 +22,5 @@ pipeline:
     type: markdown
     message_color: true
     sha_link: true
+    when:
+      status: [ success, failure ]
