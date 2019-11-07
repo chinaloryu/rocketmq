@@ -9,7 +9,7 @@ pipeline:
     name: docker
     image: plugins/docker
     DOCKER_LAUNCH_DEBUG: true
-    repo: chinaloryu/rocketmq
+    repo: rocketmq/rocketmq
     registry: hz.4yutech.com:7070
     insecure: true
     tags: latest
