@@ -9,7 +9,7 @@ pipeline:
     name: docker
     image: plugins/docker
     DOCKER_LAUNCH_DEBUG: true
-    repo: rocketmq/rocketmq
+    repo: 192.168.2.100:7070/rocketmq/rocketmq
     registry: http://192.168.2.100:7070
     insecure: true
     tags: latest
