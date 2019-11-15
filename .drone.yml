@@ -13,6 +13,7 @@ pipeline:
     registry: http://192.168.2.100:7070
     insecure: true
     tags: latest
+    debug: true
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
     depends: [ "build" ]
   dingtalk:
